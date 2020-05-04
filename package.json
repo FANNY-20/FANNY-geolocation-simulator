@@ -26,6 +26,7 @@
     "@babel/plugin-proposal-export-default-from": "^7.8.3",
     "@babel/runtime-corejs2": "^7.9.6",
     "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/moment": "^1.6.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",

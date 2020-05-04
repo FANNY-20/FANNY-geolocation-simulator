@@ -4,7 +4,8 @@
     "installed": {
       "leaflet": true,
       "axios": true,
-      "vuetify": true
+      "vuetify": true,
+      "moment": true
     }
   }
 }

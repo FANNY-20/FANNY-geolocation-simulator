@@ -27,8 +27,12 @@ export const mutations = {
   [DECLARE_GEOLOCATION_REQUEST]() {
     // Noop
   },
-  [DECLARE_GEOLOCATION_SUCCESS]() {
-    // Noop
+  [DECLARE_GEOLOCATION_SUCCESS](state, { uuid }) {
+    const foundDevice = state.list.find(o => o.uuid === uuid);
+
+    if (foundDevice) {
+      foundDevice.lastDeclaredAt = this.$moment();
+    }
   },
   [DECLARE_GEOLOCATION_FAIL]() {
     // Noop
@@ -45,6 +49,7 @@ export const actions = {
         luminosity: "dark",
       }),
       coords,
+      lastDeclaredAt: null,
     };
 
     commit(CREATE_DEVICE, { device });
@@ -66,7 +71,7 @@ export const actions = {
     try {
       const { data } = await this.$axios.$post("geolocations", body);
 
-      commit(DECLARE_GEOLOCATION_SUCCESS);
+      commit(DECLARE_GEOLOCATION_SUCCESS, { uuid });
 
       return data;
     } catch(e) {

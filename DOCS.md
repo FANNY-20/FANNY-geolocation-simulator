@@ -91,3 +91,10 @@ Permet l'intégration de la librairie de composants Vuetify, basée sur Material
 - [Doc officielle Nuxt Vuetify](https://github.com/nuxt-community/vuetify-module#readme)
 - [Doc officielle vuetify-loader](https://github.com/vuetifyjs/vuetify-loader#readme)
 - [Doc officielle Vuetify](https://vuetifyjs.com/en/getting-started/quick-start)
+
+## Nuxt Moment
+
+Permet la manipulation de dates
+
+- [Doc officielle Nuxt Moment](https://github.com/nuxt-community/moment-module#nuxtjsmoment)
+- [Doc officielle Moment](https://momentjs.com/docs/)

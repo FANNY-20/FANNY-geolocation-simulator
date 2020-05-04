@@ -26,5 +26,17 @@
         </v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
+
+    <v-list-item>
+      <v-list-item-content>
+        <v-list-item-title>Dernière MàJ de position</v-list-item-title>
+        <v-list-item-subtitle>
+          {{ getHumanReadableLastDeclaredAt }} -
+          <span :key="refreshKey">
+            {{computeHumanReadablePassedTimeSinceLastDeclaredAt()}}
+          </span>
+        </v-list-item-subtitle>
+      </v-list-item-content>
+    </v-list-item>
   </v-card>
 </div>

@@ -18,9 +18,7 @@ module.exports = {
           test: /\.(js|vue)$/,
           loader: "eslint-loader",
           exclude: /(node_modules)/,
-          options: {
-            formatter: require("eslint-friendly-formatter"),
-          },
+          options: { formatter: require("eslint-friendly-formatter") },
         });
       }
       config.node = {
@@ -41,7 +39,10 @@ module.exports = {
     transpile: [],
   },
   watch: ["@/config/**/*.js"],
-  buildModules: ["@nuxtjs/vuetify"],
+  buildModules: [
+    "@nuxtjs/vuetify",
+    "@nuxtjs/moment",
+  ],
   modules: [
     "@nuxtjs/style-resources",
     [
@@ -66,4 +67,5 @@ module.exports = {
   router: require("./config/router"),
   axios: require("./config/axios"),
   vuetify: require("./config/vuetify"),
+  moment: require("./config/moment"),
 };
