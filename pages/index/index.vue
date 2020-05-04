@@ -7,6 +7,7 @@
         map: {
           center: [49.174313, -0.367712],
           zoom: 16,
+          tileLayerUrl: "https://{s}.forte.tiles.quaidorsay.fr/fr/{z}/{x}/{y}.png",
         },
       };
     },
@@ -63,7 +64,7 @@
       :zoom="map.zoom"
       @dblclick="onMapDoubleClick"
     >
-      <l-tile-layer url="https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png" />
+      <l-tile-layer :url="map.tileLayerUrl" />
 
       <l-feature-group
         v-for="device in getDeviceList"
