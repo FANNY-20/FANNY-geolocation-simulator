@@ -83,8 +83,6 @@
           @update:lat-lng="onUpdateMarkerLatLng($event, device)"
         />
       </l-feature-group>
-
-      <l-feature-group />
     </l-map>
   </div>
 </template>
