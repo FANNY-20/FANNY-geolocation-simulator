@@ -6,6 +6,7 @@ import {
   LMarker,
   LCircle,
   LFeatureGroup,
+  LPopup,
 } from "vue2-leaflet";
 
 delete Icon.Default.prototype._getIconUrl;
@@ -21,3 +22,4 @@ Vue.component("l-tile-layer", LTileLayer);
 Vue.component("l-marker", LMarker);
 Vue.component("l-circle", LCircle);
 Vue.component("l-feature-group", LFeatureGroup);
+Vue.component("l-popup", LPopup);

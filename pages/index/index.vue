@@ -1,13 +1,22 @@
 <script>
+  import DeviceInfoCard from "./components/device-info-card/DeviceInfoCard";
   import { mapState, mapActions } from "vuex";
 
   export default {
+    components: {
+      DeviceInfoCard,
+    },
     data() {
       return {
         map: {
           center: [49.174313, -0.367712],
           zoom: 16,
           tileLayerUrl: "https://{s}.forte.tiles.quaidorsay.fr/fr/{z}/{x}/{y}.png",
+        },
+        popupOptions: {
+          maxWidth: null,
+          closeButton: false,
+          className: "popup",
         },
       };
     },
@@ -82,7 +91,14 @@
           :lat-lng="device.coords"
           draggable
           @update:lat-lng="onUpdateMarkerLatLng($event, device)"
-        />
+        >
+          <l-popup
+            :key="device.coords.lat + '-' + device.coords.lng"
+            :options="popupOptions"
+          >
+            <device-info-card :device="device" />
+          </l-popup>
+        </l-marker>
       </l-feature-group>
     </l-map>
   </div>
@@ -95,6 +111,19 @@
     .map {
       height: 100%;
       isolation: isolate;
+    }
+  }
+
+  ::v-deep {
+    .popup {
+      .leaflet-popup-content-wrapper {
+        background-color: rgba(#fff, 0);
+        box-shadow: none;
+
+        .leaflet-popup-content {
+          margin: 0;
+        }
+      }
     }
   }
 </style>
