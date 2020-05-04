@@ -1,0 +1,10 @@
+{
+  "generator-nuxt": {
+    "appLocale": "fr",
+    "installed": {
+      "leaflet": true,
+      "axios": true,
+      "vuetify": true
+    }
+  }
+}
