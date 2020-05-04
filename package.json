@@ -11,7 +11,7 @@
     "lint": "yarn eslint && yarn stylelint",
     "lint:check": "yarn eslint:check && yarn stylelint:check",
     "eslint": "yarn eslint:check --fix",
-    "eslint:check": "eslint --no-eslintrc --config eslint.config.js --format node_modules/eslint-friendly-formatter --ext .js,.vue --ignore-path .gitignore .",
+    "eslint:check": "eslint --format node_modules/eslint-friendly-formatter --ext .js,.vue --ignore-path .gitignore .",
     "stylelint": "yarn stylelint:check --fix",
     "stylelint:check": "stylelint --config stylelint.config.js './**/*.{vue,scss,css}'",
     "prettify": "prettier --config prettier.config.js --ignore-path .gitignore --write './**/*.{tpl,md,yml,json}'",
