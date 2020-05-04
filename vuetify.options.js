@@ -1,3 +1,5 @@
+import colors from "vuetify/lib/util/colors";
+
 export default {
   /**
    * @see https://vuetifyjs.com/en/customization/breakpoints
@@ -22,9 +24,12 @@ export default {
    */
   theme: {
     disable: false,
+    dark: true,
     themes: {
       // light: {},
-      // dark: {},
+      dark: {
+        primary: colors.deepPurple.base,
+      },
     },
     options: {
       customProperties: true,
