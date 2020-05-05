@@ -56,6 +56,7 @@ module.exports = {
     "@/plugins/svg-img",
     "@/plugins/joi",
     "@/plugins/leaflet.client",
+    "@/plugins/portal-vue",
   ],
   css: [
     "@/assets/styles/bases/index.scss",

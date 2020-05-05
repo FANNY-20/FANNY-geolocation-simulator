@@ -60,6 +60,7 @@
     "lodash.forown": "^4.4.0",
     "lodash.isplainobject": "^4.0.6",
     "nuxt": "2.12.2",
+    "portal-vue": "^2.1.7",
     "randomcolor": "^0.5.4",
     "svg-parser": "^2.0.4",
     "uuid": "^8.0.0",

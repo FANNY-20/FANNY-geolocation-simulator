@@ -5,7 +5,8 @@
       "leaflet": true,
       "axios": true,
       "vuetify": true,
-      "moment": true
+      "moment": true,
+      "portal": true
     }
   }
 }

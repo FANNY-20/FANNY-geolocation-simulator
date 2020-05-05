@@ -98,3 +98,9 @@ Permet la manipulation de dates
 
 - [Doc officielle Nuxt Moment](https://github.com/nuxt-community/moment-module#nuxtjsmoment)
 - [Doc officielle Moment](https://momentjs.com/docs/)
+
+## Portal Vue
+
+Permet d'envoyer un composant n'importe où dans le DOM, à la manière des portails du jeu vidéo "Portal"
+
+- [Doc officielle Portal Vue](https://portal-vue.linusb.org/)

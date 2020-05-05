@@ -3,6 +3,7 @@ import randomColor from "randomcolor";
 
 const CREATE_DEVICE = "CREATE_DEVICE";
 const UPDATE_DEVICE_COORDS = "UPDATE_DEVICE_COORDS";
+const REMOVE_ALL_DEVICES = "REMOVE_ALL_DEVICES";
 const DECLARE_GEOLOCATION_REQUEST = "DECLARE_GEOLOCATION_REQUEST";
 const DECLARE_GEOLOCATION_SUCCESS = "DECLARE_GEOLOCATION_SUCCESS";
 const DECLARE_GEOLOCATION_FAIL = "DECLARE_GEOLOCATION_FAIL";
@@ -23,6 +24,9 @@ export const mutations = {
     if (foundDevice) {
       foundDevice.coords = coords;
     }
+  },
+  [REMOVE_ALL_DEVICES](state) {
+    state.list = [];
   },
   [DECLARE_GEOLOCATION_REQUEST]() {
     // Noop
@@ -58,6 +62,9 @@ export const actions = {
   updateDeviceCoords({ commit, dispatch }, { uuid, coords }) {
     commit(UPDATE_DEVICE_COORDS, { uuid, coords });
     dispatch("declareGeolocation", { uuid, coords });
+  },
+  removeAllDevices({ commit }) {
+    commit(REMOVE_ALL_DEVICES);
   },
   async declareGeolocation({ commit }, { uuid, coords }) {
     commit(DECLARE_GEOLOCATION_REQUEST);

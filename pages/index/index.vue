@@ -1,5 +1,5 @@
 <script>
-  import DeviceInfoCard from "./components/device-info-card/DeviceInfoCard";
+  import DeviceInfoCard from "./components/device-info-card";
   import { mapState, mapActions } from "vuex";
 
   export default {
@@ -34,6 +34,7 @@
       ...mapActions("devices", [
         "spawnDevice",
         "updateDeviceCoords",
+        "removeAllDevices",
       ]),
       async initMap() {
         await this.$nextTick();
@@ -59,6 +60,9 @@
           },
         });
       },
+      onRemoveAllButtonClick() {
+        this.removeAllDevices();
+      },
     },
     mounted() {
       this.initMap();
@@ -68,6 +72,23 @@
 
 <template>
   <div class="p-index">
+    <portal to="drawer-list-items">
+      <v-list-item
+        link
+        @click="onRemoveAllButtonClick"
+      >
+        <v-list-item-action>
+          <v-icon>mdi-delete</v-icon>
+        </v-list-item-action>
+
+        <v-list-item-content>
+          <v-list-item-title>
+            Supprimer tout
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+    </portal>
+
     <l-map
       ref="map"
       class="map"
