@@ -16,6 +16,8 @@
         popupOptions: {
           maxWidth: null,
           closeButton: false,
+          autoClose: false,
+          closeOnClick: false,
           className: "popup",
         },
       };
