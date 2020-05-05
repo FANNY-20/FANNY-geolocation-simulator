@@ -1,10 +1,12 @@
 <script>
   import DeviceInfoCard from "./components/device-info-card";
+  import HelpCard from "./components/help-card";
   import { mapState, mapActions } from "vuex";
 
   export default {
     components: {
       DeviceInfoCard,
+      HelpCard,
     },
     data() {
       return {
@@ -20,6 +22,7 @@
           closeOnClick: false,
           className: "popup",
         },
+        isHelpDialogOpen: false,
       };
     },
     computed: {
@@ -60,6 +63,9 @@
           },
         });
       },
+      onHelpButtonClick() {
+        this.isHelpDialogOpen = true;
+      },
       onRemoveAllButtonClick() {
         this.removeAllDevices();
       },
@@ -75,6 +81,21 @@
     <portal to="drawer-list-items">
       <v-list-item
         link
+        @click="onHelpButtonClick"
+      >
+        <v-list-item-action>
+          <v-icon>mdi-help</v-icon>
+        </v-list-item-action>
+
+        <v-list-item-content>
+          <v-list-item-title>
+            Aide
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-list-item
+        link
         @click="onRemoveAllButtonClick"
       >
         <v-list-item-action>
@@ -88,6 +109,14 @@
         </v-list-item-content>
       </v-list-item>
     </portal>
+
+    <v-dialog
+      v-model="isHelpDialogOpen"
+      eager
+      :max-width="600"
+    >
+      <help-card />
+    </v-dialog>
 
     <l-map
       ref="map"
