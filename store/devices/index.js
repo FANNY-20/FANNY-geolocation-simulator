@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import randomColor from "randomcolor";
+import _truncate from "lodash.truncate";
 
 const CREATE_DEVICE = "CREATE_DEVICE";
 const UPDATE_DEVICE_COORDS = "UPDATE_DEVICE_COORDS";
@@ -66,7 +67,7 @@ export const actions = {
   removeAllDevices({ commit }) {
     commit(REMOVE_ALL_DEVICES);
   },
-  async declareGeolocation({ commit }, { uuid, coords }) {
+  async declareGeolocation({ commit, dispatch, state }, { uuid, coords }) {
     commit(DECLARE_GEOLOCATION_REQUEST);
 
     const body = {
@@ -79,6 +80,23 @@ export const actions = {
       const { data } = await this.$axios.$post("geolocations", body);
 
       commit(DECLARE_GEOLOCATION_SUCCESS, { uuid });
+
+      const foundDevice = state.list.find(o => o.uuid === uuid);
+      const truncateOptions = {
+        length: 11,
+        omission: "[...]",
+      };
+      const truncatedUuid = _truncate(uuid, truncateOptions);
+      const message = data.length > 0 ?
+        `${truncatedUuid} est exposé à ${data.length} point(s): ${data.map(o => _truncate(o.uuid, truncateOptions)).join(", ")}` :
+        `${truncatedUuid} n'est pas exposé`;
+
+      dispatch("console/pushMessage", {
+        value: message,
+        color: foundDevice ? foundDevice.color : "white",
+      }, {
+        root: true,
+      });
 
       return data;
     } catch(e) {
