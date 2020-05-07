@@ -19,3 +19,4 @@ test/e2e/screenshots
 .idea
 .env
 .DS_Store
+.yo-rc.json

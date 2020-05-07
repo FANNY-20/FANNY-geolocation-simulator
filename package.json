@@ -1,8 +1,7 @@
 {
-  "name": "stop-covid-location-faker-frontend",
+  "name": "fanny-geolocation-simulator",
   "version": "0.1.0",
-  "author": "Panday <benoit.fleuriaud@soyhuce.fr>",
-  "private": true,
+  "author": "Benoit Fleuriaud <benoit.fleuriaud@soyhuce.fr>",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nuxt",
     "build": "nuxt build",
@@ -16,8 +15,6 @@
     "stylelint:check": "stylelint --config stylelint.config.js './**/*.{vue,scss,css}'",
     "prettify": "prettier --config prettier.config.js --ignore-path .gitignore --write './**/*.{tpl,md,yml,json}'",
     "prettify:check": "prettier --config prettier.config.js --ignore-path .gitignore --check './**/*.{tpl,md,yml,json}'",
-    "styleguide": "vue-styleguidist server",
-    "styleguide:build": "vue-styleguidist build",
     "e2e": "node test/e2e/runner.js --env chrome-headless,firefox-headless",
     "unit": "mocha --config mocha.config.js './**/*.test.js'",
     "test": "yarn unit && yarn e2e"
@@ -65,7 +62,6 @@
     "randomcolor": "^0.5.4",
     "svg-parser": "^2.0.4",
     "uuid": "^8.0.0",
-    "vue-styleguidist": "^4.19.5",
     "vue2-leaflet": "^2.5.2"
   }
 }
