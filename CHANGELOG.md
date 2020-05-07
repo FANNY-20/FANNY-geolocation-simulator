@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## `0.1.1` (05-07-2020)
+
+- Add the MIT license
+
 ## `0.1.0` (05-07-2020)
 
 First release of the simulator, including:
