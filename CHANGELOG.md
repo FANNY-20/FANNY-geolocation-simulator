@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## `0.1.2` (05-14-2020)
+
+- Upgrade of outdated packages
+
 ## `0.1.1` (05-07-2020)
 
 - Add the MIT license

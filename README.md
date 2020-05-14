@@ -1,6 +1,15 @@
 # FANNY geolocation simulator
 
-![Release](https://img.shields.io/badge/Release-0.1.1-blue.svg)
+![Release](https://img.shields.io/badge/Release-0.1.2-blue.svg)
+
+## Context
+
+This project is part of the implementation of the FANNY protocol, divided into 2 main distinct projects
+([the API backend](https://github.com/FANNY-20/FANNY-backend) and
+[the hybrid mobile application](https://github.com/FANNY-20/FANNY-hybrid-app)).
+A third project ([the geolocation simulator](https://github.com/FANNY-20/FANNY-geolocation-simulator))
+is also available as a development tool or for manual testing.
+You can learn more about the FANNY protocol itself [here](https://github.com/FANNY-20/The_FANNY_protocol_V0.1).
 
 ## Commands
 
@@ -96,3 +105,7 @@ $ yarn unit
 ## Changelog
 
 [See CHANGELOG](./CHANGELOG.md)
+
+## License
+
+[MIT](./LICENSE)
